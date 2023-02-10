@@ -8,14 +8,14 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
+/*@Data
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class Weather {
-    @NotBlank(message = "Country can not be blank")
+/*    @NotBlank(message = "Country can not be blank")
     @Length(message = "Country name must contain min 2 max  50 character.", min = 2, max = 50)
     private String Country;
     @NotBlank(message = "City can not be blank")
     @Length(message = "City name must contain min 2 max  50 character.", min = 2, max = 50)
-    private String City;
+    private String City;*/
 }
