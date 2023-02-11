@@ -18,10 +18,29 @@ public class WeatherApiRestController {
         this.weatherService = weatherService;
     }
 
-    @PostMapping("/list")
-    public ResponseEntity list(@Valid @RequestParam(value = "country") String country,@Valid
+    @PostMapping("/list/Current/Weather/Data")
+    public ResponseEntity listCurrentWeatherData(@Valid @RequestParam(value = "countryCode") String countryCode,@Valid
                                @RequestParam(value = "city") String city){
-        return weatherService.list(country,city);
+        return weatherService.listCurrentWeatherData(countryCode,city);
+
+    }
+
+    //You can search weather forecast for 4 days (96 hours) with data every hour by city name
+
+
+    @PostMapping("/list/hourly/Forecast4/Days")
+    public ResponseEntity hourlyForecast4Days(@Valid @RequestParam(value = "countryCode") String countryCode,@Valid
+    @RequestParam(value = "city") String city){
+        return weatherService.hourlyForecast4Days(countryCode,city);
+
+    }
+
+    //hourlyForecast30Days
+
+    @PostMapping("/list/hourly/Forecast30/Days")
+    public ResponseEntity hourlyForecast30Days(@Valid @RequestParam(value = "countryCode") String countryCode,@Valid
+    @RequestParam(value = "city") String city){
+        return weatherService.hourlyForecast30Days(countryCode,city);
 
     }
 }
